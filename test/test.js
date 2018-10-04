@@ -87,12 +87,8 @@ describe('Logsene flush logs', function () {
         setSource: false,
         flushOnExit: false
       })      
-      logger.transports.Logsene.flushLogs(function(err, exitTime) {
-        if (exitTime === 200) {
-          done()
-        } else {
-          done(new Error('flush logs failed'))
-        }
+      logger.transports.Logsene.flushLogs(function(err) {
+        done()
       })
     } catch (ex) {
       console.log(ex.stack)
